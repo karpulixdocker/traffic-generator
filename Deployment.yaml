@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: traffic-generator-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: traffic-generator
+  template:
+    metadata:
+      labels:
+        app: traffic-generator
+    spec:
+      containers:
+      - name: traffic-generator
+        image: quay.io/karpulix/traffic-generator:latest
+        imagePullPolicy: Always
+        env:
+        - name: REQUEST_URL
+          value: "http://127.0.0.1"
+        - name: REQUEST_INTERVAL
+          value: "10"
+        - name: REQUEST_PAYLOAD_SIZE
+          value: "20480"  # 20 Кб
+
+
