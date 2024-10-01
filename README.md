@@ -23,3 +23,9 @@ You can configure the container behavior using the following environment variabl
 ```sh
 kubectl apply -f Deployment.yaml -n <namespace>
 ```
+
+Or
+
+```sh
+kubectl apply -f https://raw.githubusercontent.com/karpulixdocker/traffic-generator/main/Deployment.yaml
+```

@@ -24,4 +24,8 @@
 kubectl apply -f Deployment.yaml -n <namespace>
 ```
 
+Или
 
+```sh
+kubectl apply -f https://raw.githubusercontent.com/karpulixdocker/traffic-generator/main/Deployment.yaml -n <namespace>
+```
